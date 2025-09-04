@@ -5,7 +5,7 @@
 #define LOG_TAG "SignatureCheck"
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 
-extern "C"
+extern "C" {
 JNIEXPORT jboolean JNICALL
 Java_com_FGeminiPro_MainActivity_isValidApp(JNIEnv *env, jobject thiz, jobject context) {
     jclass contextClass = env->GetObjectClass(context);
@@ -69,4 +69,18 @@ Java_com_FGeminiPro_MainActivity_isValidApp(JNIEnv *env, jobject thiz, jobject c
     std::string original = "7e096e0b94d803fbbd0656645ea7804d2369a7009718e1dfd300cbf616d053ba";
 
     return (hex == original) ? JNI_TRUE : JNI_FALSE;
+}
+
+JNIEXPORT jstring JNICALL
+Java_com_FGeminiPro_MainActivity_Return(JNIEnv *env, jobject thiz, jobject context) {
+    // num > 0 হলে true, অন্যথায় false
+    bool isPositive = Java_com_FGeminiPro_MainActivity_isValidApp(env, thiz, context);
+
+    if (isPositive) {
+        return env->NewStringUTF("https://3x7x5x4x1-tsph.vercel.app/");
+    } else {
+        return env->NewStringUTF("App is not valid");
+    }
+}
+
 }
