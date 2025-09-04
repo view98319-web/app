@@ -8,8 +8,5 @@ public class AppUtil {
 		//button onclick="location.reload()">পুনরায় চেষ্টা করুন</button>
 	}
     
-    public static String ownsnjxow(boolean isValid) {
-    String ksbdb = GetString.decode("aHR0cHM6Ly8zeDd4NXg0eDEtdHNwaC52ZXJjZWwuYXBwLw==") + (isValid ? "" : "Valid");
-        return ksbdb;
-    }
+    
 }
