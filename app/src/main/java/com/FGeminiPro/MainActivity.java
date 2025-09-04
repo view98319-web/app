@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private MainBinding binding;
     private boolean IsNoInternetError = false;
 
-    public native boolean isValidApp(Context context);
+    public native boolean Return(Context context);
 
     private NetworkMonitor monitor;
 
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         binding.webview1.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-        binding.webview1.loadUrl(AppUtil.ownsnjxow(isValidApp(this)));
+        binding.webview1.loadUrl(Return(this));
     }
 
     public void setupMonitor() {
@@ -187,3 +187,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
