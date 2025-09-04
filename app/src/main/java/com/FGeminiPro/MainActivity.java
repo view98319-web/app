@@ -92,9 +92,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onReceivedError(
                             WebView view, WebResourceRequest request, WebResourceError error) {
-
+view.setVisibility(View.GONE);
                         view.loadDataWithBaseURL(null, AppUtil.error(), "text/html", "UTF-8", null);
                         IsNoInternetError = true;
+                        view.setVisibility(View.VISIBLE);
                     }
                 });
 
@@ -187,5 +188,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
 
 
