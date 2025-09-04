@@ -95,7 +95,10 @@ public class MainActivity extends AppCompatActivity {
 view.setVisibility(View.GONE);
                         view.loadDataWithBaseURL(null, AppUtil.error(), "text/html", "UTF-8", null);
                         IsNoInternetError = true;
+                        new Handler(Looper.getMainLooper()).postDelayed(() -> { 
+                            if (isDestroyed() || isFinishing ()) return;
                         view.setVisibility(View.VISIBLE);
+                        }, 400);
                     }
                 });
 
@@ -188,6 +191,7 @@ view.setVisibility(View.GONE);
         }
     }
 }
+
 
 
 
