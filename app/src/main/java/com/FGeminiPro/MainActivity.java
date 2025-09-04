@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private MainBinding binding;
     private boolean IsNoInternetError = false;
 
-    public native boolean Return(Context context);
+    public native String Return(Context context);
 
     private NetworkMonitor monitor;
 
@@ -187,4 +187,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
 
